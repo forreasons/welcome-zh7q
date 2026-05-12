@@ -37,7 +37,7 @@ After the one-time setup:
 - Double-click `_deploy-to-github-pages.command` in Finder.
 - Wait 1-2 minutes; the live URL updates.
 
-The live URL pattern is `https://<your-github-username>.github.io/hassan-home/`. A custom domain like `welcome.hassan.house` can be added later without changing the NFC tag (the github.io URL keeps working as a fallback).
+The live URL pattern is `https://thehassanfamily.com`. A custom domain like `thehassanfamily.com` can be added later without changing the NFC tag (the github.io URL keeps working as a fallback).
 
 ### Fast-path alternative — surge.sh
 
