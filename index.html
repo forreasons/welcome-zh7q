@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Welcome to the Hassan Home</title>
+<meta name="theme-color" content="#1a2e3f">
+<style>
+  :root {
+    --bg: #f3ede2;
+    --card: #ffffff;
+    --ink: #1a2e3f;
+    --muted: #6b7a82;
+    --accent: #c79a4a;
+    --line: #d8cdb8;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 18px 56px;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .photo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    background: #d8cdb8 url('assets/home-photo.jpg') center/cover no-repeat;
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    letter-spacing: 0.01em;
+  }
+  .est {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 28px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 0 0 14px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .card h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  .wifi-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+  .wifi-row:last-child { border-bottom: 0; }
+  .wifi-row .label {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .wifi-row .val {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .drinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .drinks li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+  .drinks li:last-child { border-bottom: 0; }
+  .note {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .gift {
+    background: linear-gradient(135deg, #f9f1de 0%, #f3e7c8 100%);
+    border: 1px solid var(--accent);
+  }
+  .footer {
+    margin-top: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  @media (max-width: 380px) {
+    h1 { font-size: 26px; }
+    .photo { width: 110px; height: 110px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="photo placeholder">PHOTO</div>
+    <h1>Welcome to the Hassan Home</h1>
+    <p class="est">est. 2024</p>
+
+    <div class="card">
+      <h2>Guest WiFi</h2>
+      <div class="wifi-row">
+        <span class="label">Network</span>
+        <span class="val">Hassan-Guest</span>
+      </div>
+      <div class="wifi-row">
+        <span class="label">Password</span>
+        <span class="val">[set me]</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Drinks</h2>
+      <ul class="drinks">
+        <li>Coffee &amp; tea</li>
+        <li>Sparkling water</li>
+        <li>Soft drinks in the fridge</li>
+        <li>Help yourself — the kitchen is yours</li>
+      </ul>
+    </div>
+
+    <div class="card gift">
+      <h2>Before You Go</h2>
+      <p class="note">There&rsquo;s a small gift for you on the entry table on your way out. Please take one with you.</p>
+    </div>
+
+    <p class="footer">The Hassans · Temecula</p>
+  </div>
+</body>
+</html>

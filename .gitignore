@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+node_modules/
