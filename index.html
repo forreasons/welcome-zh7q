@@ -252,31 +252,59 @@
     box-shadow: 0 1px 6px var(--shadow);
   }
 
-  /* === HORIZONTAL PHOTO ROW (CSS scroll-snap carousel) === */
+  /* === PHOTO GRID (vertical, full-viewport bleed) ===
+     2-col on phone, 4-col on desktop. No horizontal scroll.
+     Breaks out of .wrap (max-width 460px) to span the viewport. */
   .photo-row {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 18px;
-    padding: 4px 18px 14px;
-    margin: 14px -18px 0;          /* negative margin so it bleeds full width */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;          /* Firefox */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+    padding: 0 6px;
+    margin: 16px 0 0;
   }
-  .photo-row::-webkit-scrollbar { display: none; }  /* WebKit */
   .photo-row img {
-    flex: 0 0 auto;
-    width: 85%;                    /* one photo at a time on phone */
-    max-width: 360px;
-    aspect-ratio: 3 / 4;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 6px;
-    scroll-snap-align: start;
+    display: block;
     background: var(--marble);
     box-shadow: 0 1px 6px var(--shadow);
   }
-  .photo-row img.landscape { aspect-ratio: 4 / 3; }
+  .photo-row img.landscape { aspect-ratio: 1 / 1; }
+  @media (min-width: 768px) {
+    .photo-row {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 0 18px;
+    }
+  }
+
+  /* === LYCHEE FEATURE (image + text side-by-side at top of Bar card) === */
+  .drink.lychee-feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding-top: 4px;
+  }
+  .drink.lychee-feature .lychee-img {
+    flex: 0 0 42%;
+    margin: 0;
+  }
+  .drink.lychee-feature .lychee-img img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    background: var(--marble);
+    box-shadow: 0 1px 6px var(--shadow);
+  }
+  .drink.lychee-feature .lychee-text { flex: 1; min-width: 0; }
+  .drink.lychee-feature .lychee-text .name { margin-top: 0; }
 
   .photo-coming {
     width: 100%;
@@ -469,7 +497,6 @@
       <p class="voice">Always be sidequesting.</p>
       <div class="photo-row">
         <img src="assets/photos/temecula-01.jpg" alt="Lychee Rose Mocktail on marble pedestal, framed Sharbat Rooh Afza print, chinoiserie ginger jar with hydrangeas">
-        <img src="assets/photos/temecula-02.jpg" alt="Mocktail with framed Sharbat Rooh Afza print and chinoiserie hydrangeas">
         <img src="assets/photos/temecula-03.jpg" alt="Mocktail on marble pedestal beside Rooh Afza print and blue hydrangeas">
         <img src="assets/photos/temecula-04.jpg" alt="Marble pedestal table with mocktail, framed print, and hydrangeas by the window">
         <img src="assets/photos/temecula-05.jpg" alt="Two mocktails on the coffee table with the styled living room behind">
@@ -487,13 +514,18 @@
     <!-- 5. FROM THE BAR -->
     <div class="card">
       <h2>From the Bar</h2>
-      <div class="drink">
-        <p class="name"><span class="signature-mark">&#10022;</span>Lychee Rose Mocktail</p>
-        <p class="detail">Rooh Afza, sparkling lychee, lime, taj&iacute;n rim. Seasonal signature.</p>
+      <div class="drink lychee-feature">
+        <div class="lychee-img">
+          <img src="assets/photos/temecula-02.jpg" alt="Lychee Rose Mocktail with framed Sharbat Rooh Afza print and chinoiserie hydrangeas">
+        </div>
+        <div class="lychee-text">
+          <p class="name"><span class="signature-mark">&#10022;</span>Lychee Rose Mocktail</p>
+          <p class="detail">Rooh Afza, sparkling lychee, lime, taj&iacute;n rim. Seasonal signature.</p>
+        </div>
       </div>
       <div class="drink">
         <p class="name"><span class="signature-mark">&#10022;</span>Salted Cold Foam Vietnamese Coffee</p>
-        <p class="detail">A nod to Coffeeholic House. Iced Vietnamese coffee, salted cold foam on top.</p>
+        <p class="detail">A nod to Drip &amp; Sip in Seattle. Iced Vietnamese coffee, salted cold foam on top.</p>
       </div>
       <div class="drink">
         <p class="name">Iced Coffee</p>
